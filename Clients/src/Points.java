@@ -43,4 +43,40 @@ public class Points {
 
     }
 
+
+    public void sum(Points points){
+        int result = 0;
+
+        result  = points.clientAge + points.gender + points.isSmoke + points.durationAG +
+                points.CAD + points.DAD + points.cholesterol + points.interleukin +
+                points.TNF + points.neopterin + points.lacticAcid + points.alphaLinolenicAcid +
+                points.MDA + points.COD + points.IMMLG + points.bloodReduction;
+
+        if (result > 10){
+            System.out.println("Кол-во баллов: " +  result + " - высокий риск \n");
+        } else {
+            System.out.println("Кол-во баллов: " +  result + " - низкий риск \n");
+        }
+    }
+
+    public void show(){
+        System.out.println(" Возраст клиента: " + clientAge +
+                "\n Пол: " + gender +
+                "\n Курение: " + isSmoke +
+                "\n Длительность АГ, годы: "+ durationAG +
+                "\n САД, мм рт. ст.: " + CAD +
+                "\n ДАД, мм рт.ст.: " + DAD +
+                "\n Холесерин, ммоль/л: " + cholesterol +
+                "\n Интерлейкин-6, пг/мл: " + interleukin +
+                "\n TNF-a, пг/мл: "+ TNF +
+                "\n Неоптерин, нмоль/л: " + neopterin +
+                "\n Молочная кислота, ммоль/л: " +  lacticAcid +
+                "\n а-линолевая кислота, нмоль/мл: " + alphaLinolenicAcid +
+                "\n Арахидоновая кислота, нмоль/мл: " + arachidonicAcid +
+                "\n МДА, нмоль/г белка: " + MDA +
+                "\n СОД, усл.ед: " + COD +
+                "\n ИММЛЖ, г/м^2: " + IMMLG +
+                "\n Градация по степени ночной редукции артериального давления: " + bloodReduction +
+                "\n");
+    }
 }

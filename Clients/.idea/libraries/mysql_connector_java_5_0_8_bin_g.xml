@@ -4,6 +4,8 @@
       <root url="jar://$USER_HOME$/Desktop/mysql-connector-java-5.0.8-bin-g.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Desktop/mssql-jdbc-8.4.1.jre8.jar!/" />
+    </SOURCES>
   </library>
 </component>

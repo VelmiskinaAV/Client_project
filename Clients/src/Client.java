@@ -1,9 +1,7 @@
-import com.sun.org.apache.bcel.internal.generic.DADD;
-
 public class Client {
 
     public int clientAge;
-    public String gender;
+    public int gender;
     public boolean isSmoke;
     public int durationAG;
     public double CAD;
@@ -20,7 +18,7 @@ public class Client {
     public double IMMLG;
     public boolean bloodReduction;
 
-    Client(int clientAge, String gender, boolean isSmoke, int durationAG, double CAD, double DAD,
+    Client(int clientAge, int gender, boolean isSmoke, int durationAG, double CAD, double DAD,
            double cholesterol, double interleukin, double TNF, double neopterin, double lacticAcid,
            double alphaLinolenicAcid, double arachidonicAcid, double MDA, double COD, double IMMLG,
          boolean bloodReduction){
@@ -45,7 +43,7 @@ public class Client {
 
     }
 
-    public String show(){
+    public void show(){
 
         String smoke;
 
@@ -55,16 +53,25 @@ public class Client {
             smoke = "нет";
         }
 
+        String gen = "";
+
+        if (gender == 1){
+            gen = "мужской";
+        }
+        if (gender == 0){
+            gen = "женский";
+        }
+
         String reduction;
 
         if(bloodReduction){
-            reduction = "Подвержен";
+            reduction = "подвержен(а)";
         } else {
-            reduction = "Не подвержен";
+            reduction = "не подвержен(а)";
         }
 
-        return  "Возраст клиента: " + clientAge +
-                "\n Пол: " + gender +
+        System.out.println(" Возраст клиента: " + clientAge +
+                "\n Пол: " + gen +
                 "\n Курение: " + smoke +
                 "\n Длительность АГ, годы: "+ durationAG +
                 "\n САД, мм рт. ст.: " + CAD +
@@ -78,9 +85,9 @@ public class Client {
                 "\n Арахидоновая кислота, нмоль/мл: " + arachidonicAcid +
                 "\n МДА, нмоль/г белка: " + MDA +
                 "\n СОД, усл.ед: " + COD +
-                "\n ИММЛЖ, г/м^2" + IMMLG +
-                "\n Градация по степени ночной редукции артериального давления" + reduction;
-
+                "\n ИММЛЖ, г/м^2: " + IMMLG +
+                "\n Градация по степени ночной редукции артериального давления: " + reduction +
+                "\n");
     }
 
     public Points convertClientsDataToPoints(Client client){
@@ -91,7 +98,7 @@ public class Client {
         }
 
         int genderPoint = 0;
-        if (client.gender.equals("'male'")) {
+        if (client.gender == 1) {
             genderPoint = 1;
         }
 
@@ -182,4 +189,5 @@ public class Client {
 
         return points;
     }
+
 }
